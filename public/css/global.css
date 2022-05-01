@@ -73,6 +73,15 @@ footer .list-group-item+.list-group-item  {
   float: left;
 }
 
+.grid-picture {
+  height: 200px;
+  object-fit: cover;
+}
+  
+.grid-col-odd .grid-picture:last-child {
+  height: 400px;
+}
+
 @media (min-width: 768px) {    
   .cards-wrapper .podcast-card {
     flex: 1;    
@@ -98,14 +107,5 @@ footer .list-group-item+.list-group-item  {
   .grid-col-odd {
     width: 50%;
     float: left;
-  }
-  
-  .grid-picture {
-    height: 200px;
-    object-fit: cover;
-  }
-  
-  .grid-col-odd .grid-picture:last-child {
-    height: 400px;
   }
 }
