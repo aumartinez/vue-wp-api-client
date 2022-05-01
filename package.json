@@ -1,0 +1,24 @@
+{
+  "name": "vue-wp-api-client",
+  "version": "1.0.0",
+  "description": "Vue client for WordPress API",
+  "main": "index.js",
+  "dependencies": {
+    "vue": "^3.2.33"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aumartinez/vue-wp-api-client.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aumartinez/vue-wp-api-client/issues"
+  },
+  "homepage": "https://github.com/aumartinez/vue-wp-api-client#readme"
+}
