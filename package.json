@@ -3,12 +3,19 @@
   "version": "1.0.0",
   "description": "Vue client for WordPress API",
   "main": "index.js",
-  "dependencies": {
-    "vue": "^3.2.33"
-  },
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "vue": "^2.5.17"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^3.0.0",
+    "@vue/cli-plugin-eslint": "^3.0.0",
+    "@vue/cli-service": "^3.0.0",
+    "node-sass": "^4.14.1",
+    "sass-loader": "^7.0.1",
+    "vue-template-compiler": "^2.5.17"
   },
   "repository": {
     "type": "git",
@@ -20,5 +27,29 @@
   "bugs": {
     "url": "https://github.com/aumartinez/vue-wp-api-client/issues"
   },
-  "homepage": "https://github.com/aumartinez/vue-wp-api-client#readme"
+  "homepage": "https://github.com/aumartinez/vue-wp-api-client#readme",
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "eslint:recommended"
+    ],
+    "rules": {},
+    "parserOptions": {
+      "parser": "babel-eslint"
+    }
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {}
+    }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ]
 }

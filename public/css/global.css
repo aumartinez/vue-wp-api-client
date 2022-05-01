@@ -1,0 +1,79 @@
+/*Global CSS*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+body {
+  font-family: 'Poppins', Helvetica, Arial, sans-serif;
+}
+
+nav,
+.nav-link {
+  padding-right: 0 !important;
+  padding-left: 0 !important;
+}
+
+/*Branding*/
+.color-white {
+  color: #fff !important;
+}
+
+.cards-wrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+.img-responsive {
+  max-width: 100%;
+}
+
+.cards-wrapper a {
+  display: inline-block;
+}
+
+.cards-wrapper .podcast-card {
+  align-items: center;
+  padding: 1rem;
+  border-radius: 10px;
+  border: solid 1px #ccc;
+}
+
+/*Footer*/
+.social-icons .icon {
+  width: 35px;
+  height: 35px;
+  display: inline-block;
+  border-radius: 50%;
+  text-align: center;
+  padding: 5px;
+}
+
+footer .podcast-card {
+  margin-bottom: 15px;
+  border-radius: 10px;
+  padding: 10px;  
+}
+
+footer .list-group-item+.list-group-item  {
+  border-top-width: thin;
+}
+
+@media (min-width: 768px) {    
+  .cards-wrapper .podcast-card {
+    flex: 1;    
+  }
+  
+  form input {
+    flex: 1;
+  }
+  
+  footer .podcast-card {
+    max-width: 80%;
+  }
+  
+  footer .podcast-card:last-child {
+    max-width: 50%;
+  }
+  
+  footer .podcast-card {
+    height: auto;
+  }
+}
