@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import App from './app/app.vue';
+import App from './app/App.vue';
 
 new Vue({
   render: h => h(App)
