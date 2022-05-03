@@ -1,6 +1,8 @@
 # vue-wp-api-client
  Vue client for WordPress API
  
+ Download/clone repo
+ 
  To install go to folder root and run npm commands from a console prompt
  
  ```node
