@@ -13,6 +13,7 @@
               >
                 <div class="grid-col-even">
                   <div class="grid-picture"
+                  v-if="even"
                   v-for="(index, item) in 3"
                   :key="index"
                   >
@@ -21,6 +22,7 @@
                 </div>
                 <div class="grid-col-odd">
                   <div class="grid-picture"
+                  v-if="odd"
                   v-for="(index, item) in 2"
                   :key="index"
                   >
@@ -50,38 +52,35 @@ export default {
     }
   },
   mounted () {
-    this.even = true;
-    this.odd = true;
-    
-    
-    let res = gallery.getContent();    
-    let getImages = () => {
-      res.then(result => {        
-        let str = result[0].content.rendered;
-        let doc = new DOMParser().parseFromString(str, 'text/html');
-        let arr = doc.querySelectorAll('img');
-        
-        if (arr.length >= 10) {
-          this.hasTen = true;
-        }
-        
-        this.outCols = Math.floor(arr.length/5);
-        
-        let src = [];
-        
-        for (let i = 0; i < arr.length; i++) {
-          src.push(arr[i].src);
-        }
-        
-        this.imgs = src;
-      });
-    };
-    
-    getImages();
+    this.getGalleryImages();
   },
   methods: {
-    incrementIndex: function (key) {
-        return key + 1;
+    getGalleryImages: function(){
+      let res = gallery.getContent();    
+      let getImages = () => {
+        res.then(result => {        
+          let str = result[0].content.rendered;
+          let doc = new DOMParser().parseFromString(str, 'text/html');
+          let arr = doc.querySelectorAll('img');
+          
+          if (arr.length >= 10) {
+            this.hasTen = true;
+            this.even = true;
+            this.odd = true;
+          }
+          
+          this.outCols = Math.floor(arr.length/5);
+          
+          let src = [];
+          
+          for (let i = 0; i < arr.length; i++) {
+            src.push(arr[i].src);
+          }
+          
+          this.imgs = src;
+        });
+      }
+      getImages();  
     }
   }
 }
