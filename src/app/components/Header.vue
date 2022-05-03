@@ -11,10 +11,11 @@
               <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav mr-auto"
-              v-for="item in menu"
-              :key="item.ID">
-                <li class="nav-item">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item"
+                v-for="item in menu"
+                :key="item.ID"
+                >
                   <a class="nav-link" :href="item.url">
                   {{item.title}}
                   </a>
@@ -52,14 +53,19 @@ export default {
     }
   },
   mounted () {
-    let res = links.getLinks();
-    let getMenu = () => {
-      res.then(result => {
-        this.menu = result;
-      });
-    };
-    
-    getMenu();
+    this.getHeaderLinks();
+  },
+  methods: {
+    getHeaderLinks: function () {
+      let res = links.getLinks();
+      let getMenu = () => {
+        res.then(result => {
+          this.menu = result;
+        });
+      };
+      
+      getMenu();
+    }
   }
 }
 </script>

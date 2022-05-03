@@ -1,0 +1,88 @@
+<template>
+  <section>
+    <h2 class="d-none">Gallery</h2>
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <h2 class="text-center">Gallery</h2>
+            <div class="grid">
+              <div class="grid-width-2"
+              v-if="hasTen"
+              v-for="(i,n) in 2"
+              :key="i"
+              >
+                <div class="grid-col-even">
+                  <div class="grid-picture"
+                  v-for="(index, item) in 3"
+                  :key="index"
+                  >
+                    <img alt="Gallery picture" :src="imgs[item + (n*5)]"  />
+                  </div>
+                </div>
+                <div class="grid-col-odd">
+                  <div class="grid-picture"
+                  v-for="(index, item) in 2"
+                  :key="index"
+                  >
+                    <img alt="Gallery picture" :src="imgs[item+3+(n*5)]" />
+                  </div>
+                </div>
+              </div>
+            </div><!-- /grid -->
+        </div>
+      </div>
+    </div>
+  </section>
+</template>
+
+<script>
+import {gallery} from '../gallery.js';
+
+export default {
+  name: 'Gallery',
+  data () {
+    return {
+      even: false,
+      odd: false,
+      hasTen: false,
+      imgs: [],
+      outCols: 0,
+    }
+  },
+  mounted () {
+    this.even = true;
+    this.odd = true;
+    
+    
+    let res = gallery.getContent();    
+    let getImages = () => {
+      res.then(result => {        
+        let str = result[0].content.rendered;
+        let doc = new DOMParser().parseFromString(str, 'text/html');
+        let arr = doc.querySelectorAll('img');
+        
+        if (arr.length >= 10) {
+          this.hasTen = true;
+        }
+        
+        this.outCols = Math.floor(arr.length/5);
+        
+        let src = [];
+        
+        for (let i = 0; i < arr.length; i++) {
+          src.push(arr[i].src);
+        }
+        
+        this.imgs = src;
+      });
+    };
+    
+    getImages();
+  },
+  methods: {
+    incrementIndex: function (key) {
+        return key + 1;
+    }
+  }
+}
+</script>

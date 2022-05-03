@@ -1,4 +1,4 @@
-//menu.js
+//footer.js
 import axios from 'axios';
 
 export const links = {

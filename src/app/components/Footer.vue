@@ -3,8 +3,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-4">
-          <img alt="footer logo" class="img-responsive" src="img/logo.png" />
-          
+          <img alt="footer logo" class="img-responsive" src="img/logo.png" />          
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
           </p>
@@ -40,11 +39,11 @@
               </h4>
               
               <nav>
-                <ul class="nav flex-column"
-                v-for="item in menu"
-                :key="item.ID"
-                >
-                  <li class="nav-item">
+                <ul class="nav flex-column">
+                  <li class="nav-item"
+                  v-for="item in menu"
+                  :key="item.ID"
+                  >
                     <a class="nav-link" :href="item.url">
                     {{item.title}}
                     </a>
@@ -61,12 +60,11 @@
               <nav>
                 <ul class="nav flex-column">
                   <li class="nav-item"
-                  v-for="index in 4"
-                  :key="index"
+                  v-for="item in recent"
                   >
                     <a class="nav-link" 
-                    :href="recent[index].link">
-                     {{recent[index].title.rendered}}
+                    :href="item.link">
+                     {{item.title.rendered}}
                     </a>
                   </li>
                 </ul>
@@ -121,23 +119,30 @@ export default {
     }
   },
   mounted () {
-    let res = links.getLinks();
-    let getMenu = () => {
-      res.then(result => {
-        this.menu = result;
-      });
-    };
-    
-    getMenu();
-    
-    res = links.getLatest();    
-    let getEpisodes = () => {
-      res.then(result => {
-        this.recent = result;
-      });
-    };
-    
-    getEpisodes();
+    this.getFooterLinks();    
+    this.getLatestEpisodes();
+  },
+  methods: {
+    getFooterLinks: function () {
+      let res = links.getLinks();
+      let getMenu = () => {
+        res.then(result => {
+          this.menu = result;
+        });
+      };
+      
+      getMenu();
+    },
+    getLatestEpisodes: function() {
+      let res = links.getLatest();    
+      let getEpisodes = () => {
+        res.then(result => {
+          this.recent = result.splice(3, result.length);
+        });
+      };
+      
+      getEpisodes();
+    }
   }
 }
 </script>
