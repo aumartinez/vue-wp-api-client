@@ -1,10 +1,12 @@
 <template>
-  <section>
+  <section class="bg-fade">
     <h2 class="d-none">Gallery</h2>
     <div class="container">
       <div class="row">
         <div class="col-12">
-          <h2 class="text-center">Gallery</h2>
+          <h2 class="text-center gallery-title">
+          Our Gallery
+          </h2>
             <div class="grid">
               <div class="grid-width-2"
               v-if="hasTen"

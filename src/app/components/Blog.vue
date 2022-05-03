@@ -1,15 +1,16 @@
 <template>
-  <section>
+  <section class="bg-fade">
     <h2 class="d-none">Blog</h2>
     <div class="container">
       <div class="row">
         <div class="col-12">
-          <h2 class="text-center">
+          <h2 class="text-center blog-heading">
             Blog Posts
           </h2>
           <div id="blog-carousel" class="carousel slide" data-interval="false">
             <!-- Slideshow -->
             <div class="carousel-inner">
+              <!-- slides -->
               <div class="carousel-item active"
               v-if="hasPosts"
               >
@@ -18,8 +19,8 @@
                   v-for="item in posts.slice(start, limit)"
                   :key="item.id"
                   >
-                    <article class="blog-card">
-                      <div class="blog-heading">
+                    <article class="blog-card bg-white">
+                      <div class="blog-card-head">
                         <p>
                           <span class="blog-author">By {{item._embedded.author[0].name}}</span>
                           &nbsp;&nbsp;
@@ -33,7 +34,7 @@
                         <h3 v-html="item.title.rendered">
                         </h3>
                       </div>
-                      <div class="blog-content" v-html="item.excerpt.rendered">
+                      <div class="blog-card-content" v-html="item.excerpt.rendered">
                       </div>
                       <div class="blog-more">
                         <a :href="item.link" class="btn btn-light">
@@ -44,6 +45,7 @@
                   </div>
                 </div><!-- /row -->
               </div> 
+              <!-- /slides -->
               <!-- slides -->
               <div class="carousel-item"
               v-if="hasPosts"
@@ -53,8 +55,8 @@
                   v-for="item in posts.slice(limit, limit + limit)"
                   :key="item.id"
                   >
-                    <article class="blog-card">
-                      <div class="blog-heading">
+                    <article class="blog-card bg-white">
+                      <div class="blog-card-head">
                         <p>
                           <span class="blog-author">By {{item._embedded.author[0].name}}</span>
                           &nbsp;&nbsp;
@@ -68,7 +70,7 @@
                         <h3 v-html="item.title.rendered">
                         </h3>
                       </div>
-                      <div class="blog-content" v-html="item.excerpt.rendered">
+                      <div class="blog-card-content" v-html="item.excerpt.rendered">
                       </div>
                       <div class="blog-more">
                         <a :href="item.link" class="btn btn-light">
@@ -80,12 +82,11 @@
                 </div><!-- /row -->
               </div> 
               <!-- /slides -->
-            </div>            
-            
+            </div>
             <!-- /Slideshow -->
             
             <!-- controls -->
-            <div class="text-center">
+            <div class="text-center blog-controls">
               <a href="#blog-carousel" data-slide="prev">
                 <span><i class="fa-solid fa-arrow-left-long"></i></span>
               </a>
@@ -132,7 +133,7 @@ export default {
           for (let i=0; i < this.posts.length; i++){
             let d = result[i].date;
             let newDate = strftime('%B %d, %Y', new Date(d));
-            this.posts[i].date = 'Posted on ' + newDate;  
+            this.posts[i].date = newDate;  
           }
                     
           if (this.posts.length > 0) {

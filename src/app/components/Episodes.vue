@@ -1,23 +1,23 @@
 <template>
-  <section>
+  <section class="bg-fade">
     <h2 class="d-none">Episodes</h2>
-    <div class="container section-episodes">
+    <div class="container section-episodes bg-white">
       <div class="row">
         <div class="col-10">
-          <h2>
+          <h2 class="episodes-title">
             Latest Podcast Episodes
           </h2>
         </div>
         
         <div class="col-md-2">
-          <p class="float-right">
-            <a href="#" title="View all" class="btn btn-primary">View all</a>
+          <p class="float-right-md text-center">
+            <a href="#" title="View all" class="btn btn-primary">View All</a>
           </p>
         </div>
       </div>
           
       <!-- posts -->
-      <div class="row"
+      <div class="row episodes-row"
       v-if="hasPosts"
       v-for="item in posts"
       :key="item.id"
@@ -143,7 +143,7 @@ export default {
             let tagStr = '';
             for (let n = 0; n < arr.length; n++){
               if (n < (arr.length - 1)){
-                tagStr += arr[n] + " / ";;
+                tagStr += arr[n] + " / ";
               }
               else {
                 tagStr += arr[n];

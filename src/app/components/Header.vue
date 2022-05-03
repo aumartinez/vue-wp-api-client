@@ -1,5 +1,5 @@
 <template>
-  <header>
+  <header class="bg-light">
     <div class="container">
       <div class="row">
         <div class="col-12">
@@ -7,16 +7,18 @@
             <a class="navbar-brand" href="#">
               <img class="img-responsive" src="img/logo.png" alt="logo" />
             </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-mobile" aria-controls="navbar-mobile" aria-expanded="false" aria-label="Toggle navigation">
+              <span><i class="fa-solid fa-bars"></i></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="collapse navbar-collapse" id="navbar-mobile">
               <ul class="navbar-nav mr-auto">
                 <li class="nav-item"
-                v-for="item in menu"
-                :key="item.ID"
+                v-for="(item, index) in menu"
+                :key="item.ID"                
                 >
-                  <a class="nav-link" :href="item.url">
+                  <a class="nav-link" :href="item.url"
+                  :class="{active: index === 0}"
+                  >
                   {{item.title}}
                   </a>
                 </li>

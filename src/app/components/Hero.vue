@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section class="bg-light">
     <h2 class="d-none">Hero</h2>
     <div class="container">
       <div class="row">
@@ -7,7 +7,7 @@
           <article>
             <div class="hero-label">
               <p>
-                Trending episode
+                Trending Episode
               </p>
             </div>
             
@@ -26,7 +26,7 @@
           <article>
             <div class="subhero-label">
               <p>
-                Listen on also
+                Listen On Also
               </p>
             </div>
             <ul class="cards-wrapper list-inline">
@@ -48,7 +48,7 @@
             </ul>              
           </article>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-6 hero-image">
           <img :src="img" class="img-responsive" />
           <div v-html="audio" class="audtio-container">
           </div>

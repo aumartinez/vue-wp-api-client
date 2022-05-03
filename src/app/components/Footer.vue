@@ -1,9 +1,9 @@
 <template>
-  <footer>
+  <footer class="bg-fade">
     <div class="container">
       <div class="row">
         <div class="col-md-4">
-          <img alt="footer logo" class="img-responsive" src="img/logo.png" />          
+          <img alt="footer logo" class="img-responsive footer-logo" src="img/logo.png" />          
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
           </p>
@@ -61,6 +61,7 @@
                 <ul class="nav flex-column">
                   <li class="nav-item"
                   v-for="item in recent"
+                  :key="item"
                   >
                     <a class="nav-link" 
                     :href="item.link">
@@ -95,7 +96,7 @@
             </li>              
           </ul>
         </div>
-        <div class="col-12">
+        <div class="col-12 last-section">
           <div class="footer-line">
           </div>
           <p class="copyright text-center">
