@@ -150,7 +150,6 @@ export default {
               }
             }
             posts[i].tags_names = tagStr;
-            console.log(posts);
           }          
           this.posts = posts;
         });

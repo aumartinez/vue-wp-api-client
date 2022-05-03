@@ -10,22 +10,18 @@
           <div id="blog-carousel" class="carousel slide" data-interval="false">
             <!-- Slideshow -->
             <div class="carousel-inner">
-              <div class="carousel-item"
+              <div class="carousel-item active"
               v-if="hasPosts"
-              v-for="index in slides"              
-              :key="index"
-              :class="{
-                'active': index === 1,
-              }"             
               >
                 <div class="row">
-                  <div class="col-md-4"
-                  v-for="item in posts"
+                  <div class="col-md-4"                  
+                  v-for="item in posts.slice(start, limit)"
+                  :key="item.id"
                   >
                     <article class="blog-card">
                       <div class="blog-heading">
                         <p>
-                          <span class="blog-author">By {{item._embedded.author}}</span>
+                          <span class="blog-author">By {{item._embedded.author[0].name}}</span>
                           &nbsp;&nbsp;
                           <span class="blog-date">Sep 11, 2020</span>
                         </p>
@@ -34,25 +30,58 @@
                         </p>
                       </div>
                       <div class="blog-title">
-                        <h3>
-                          Lorem ipsum dolor sit amet, consectetur 
+                        <h3 v-html="item.title.rendered">
                         </h3>
                       </div>
-                      <div class="blog-content">
-                        <p>
-                          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                        </p>
+                      <div class="blog-content" v-html="item.excerpt.rendered">
                       </div>
                       <div class="blog-more">
-                        <a href="#" class="btn btn-light">
+                        <a :href="item.link" class="btn btn-light">
                           Read More
                         </a>
                       </div>
                     </article>
                   </div>
                 </div><!-- /row -->
-              </div>              
-            </div>
+              </div> 
+              <!-- slides -->
+              <div class="carousel-item"
+              v-if="hasPosts"
+              >
+                <div class="row">
+                  <div class="col-md-4"                  
+                  v-for="item in posts.slice(limit, limit + limit)"
+                  :key="item.id"
+                  >
+                    <article class="blog-card">
+                      <div class="blog-heading">
+                        <p>
+                          <span class="blog-author">By {{item._embedded.author[0].name}}</span>
+                          &nbsp;&nbsp;
+                          <span class="blog-date">{{item.date}}</span>
+                        </p>
+                        <p class="blog-name">
+                          NicaSource Radio
+                        </p>
+                      </div>
+                      <div class="blog-title">
+                        <h3 v-html="item.title.rendered">
+                        </h3>
+                      </div>
+                      <div class="blog-content" v-html="item.excerpt.rendered">
+                      </div>
+                      <div class="blog-more">
+                        <a :href="item.link" class="btn btn-light">
+                          Read More
+                        </a>
+                      </div>
+                    </article>
+                  </div>
+                </div><!-- /row -->
+              </div> 
+              <!-- /slides -->
+            </div>            
+            
             <!-- /Slideshow -->
             
             <!-- controls -->
@@ -76,6 +105,8 @@
 <script>
 import {blogs} from '../blog.js';
 
+const strftime = require('strftime');
+
 export default {
   name: 'Blog',
   data () {
@@ -83,6 +114,8 @@ export default {
       hasPosts: false,
       posts: {},
       slides: null,      
+      start: 0,
+      limit: 3,
     }
   },
   mounted () {
@@ -95,6 +128,12 @@ export default {
         res.then(result => {          
           this.posts = result;
           this.slides = Math.floor(this.posts.length/3);
+          
+          for (let i=0; i < this.posts.length; i++){
+            let d = result[i].date;
+            let newDate = strftime('%B %d, %Y', new Date(d));
+            this.posts[i].date = 'Posted on ' + newDate;  
+          }
                     
           if (this.posts.length > 0) {
             this.hasPosts = true;
