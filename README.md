@@ -20,3 +20,8 @@
  Required:
  * NodeJS
  * NPM package manager
+ 
+ 
+ Preview
+ 
+ ![Alt text](https://github.com/aumartinez/vue-wp-api-client/blob/main/full-page-result.png "Optional title")
