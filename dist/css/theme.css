@@ -1,0 +1,350 @@
+/*Theme CSS*/
+
+/*Branding and styling*/
+h1 {
+  font-size: 1.8rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+h3 {
+  font-size: 1.2rem;
+}
+
+.bg-light {
+  background-color: #f6f7f8;
+}
+
+.bg-fade {
+  background-color: #fdfbfb;
+}
+
+.bg-secondary {
+  background-color: #0B2342 !important;
+}
+
+/*Header*/
+header {
+  border-bottom: 1px solid #F13C45;
+}
+
+header .navbar button.navbar-toggler {
+  color: #fff;
+  border-color: #F13C45;
+  border-radius: 0;
+  background-color: #F13C45;
+}
+
+header a.navbar-brand>img{
+  height: 50px;
+}
+
+.btn-primary:hover,
+.btn-primary {
+  background-color: #F13C45;
+  border-color: #F13C45;
+  border-radius: 0;
+  color: #fff;
+}
+
+.btn-light:hover,
+.btn-light {
+  background-color: #fff;
+  color: #F13C45;
+  border-color: #F13C45;
+  border-radius: 0;
+}
+
+a.btn-light:focus,
+a.btn-light:active
+.btn-light:focus,
+.btn-light:active {
+  background-color: #F13C45;
+  border-color: #F13C45;
+  border-radius: 0;
+  color: #fff;
+}
+
+.btn-primary:hover,
+.btn-light:hover {
+  opacity: 0.6;
+}
+
+header .navbar-nav .nav-link {
+  text-align: center;
+}
+
+header .nav-btns .nav-item {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+header .navbar-collapse .navbar-nav .nav-link {
+  color: #000;
+  margin-right: 1rem;
+  margin-left: 1rem;
+}
+
+header .navbar-collapse .navbar-nav .nav-link:hover,
+header .navbar-collapse .navbar-nav .nav-link.active {
+  color: #F13C45;
+  border-bottom: solid 1px #000; 
+}
+
+/*Hero*/
+section,
+footer {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.hero-label {
+  font-size: 16px;
+  margin-left: 30px;
+  position: relative;
+}
+
+.hero-label:before {
+  content: "";
+  display: block;
+  border-top: 1px solid #F13C45;
+  position: absolute;
+  width: 25px;
+  left: -25px;
+  top: 12px;  
+}
+
+.subhero-label {
+  font-size: 16px;
+  position: relative;
+}
+
+.subhero-label:after {
+  content: "";
+  display: block;
+  border-top: 1px solid #F13C45;
+  position: absolute;
+  width: 25px;
+  left: 115px;
+  top: 12px;
+}
+
+.cards-wrapper .podcast-card {
+  display: block;
+  width: 80%;
+  margin: auto;
+  margin-right: auto;
+  margin-bottom: 15px;
+}
+
+/*Episodes*/
+.episodes-title {
+  margin-bottom: 30px;
+}
+
+h3.post-title {
+  font-size: 1.3rem;
+}
+
+.episodes-row {
+  margin-bottom: 25px;
+}
+
+.post-caption {
+  color: #c3c3c3;
+  display: flex;
+  align-items: center;
+  padding: 20px;
+}
+
+.post-link {
+  text-align: center;
+}
+
+.episodes-row img {
+  margin-bottom: 15px;
+}
+
+/*Blogs*/
+h2.blog-heading {
+  margin-bottom: 30px;
+}
+
+.blog-card {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.blog-title,
+.blog-card-content,
+.blog-more {
+  padding: 0 30px;
+}
+
+.blog-card-head {
+  padding: 15px 25px;
+  position: relative;
+}
+
+.blog-card-head:before {
+  content: "";
+  position: absolute;
+  height: 25px;
+  border-left: 4px solid #F13C45;
+  top: 20px;
+  left: 0;
+}
+
+.blog-card-head p {
+  font-size: 12px;
+  margin: 0;  
+}
+
+.blog-author {
+  color: #F13C45;
+}
+
+.blog-more {
+  text-align: center;
+}
+
+.blog-controls a {
+  color: #000;
+}
+
+/*Gallery*/
+h2.gallery-title {
+  margin-bottom: 30px;
+}
+
+/*Prefooter*/
+form input.form-control {
+  height: 38px;
+  border-radius: 0;
+  margin-bottom: 15px;
+}
+
+/*Footer*/
+.footer-logo {
+  height: 50px;
+  margin-bottom: 15px;
+}
+
+footer h4 {
+  font-size: 16px;
+  margin-bottom: 30px;
+}
+
+footer .nav a {
+  color: #999;
+}
+
+footer .last-section {
+  margin-top: 50px;
+}
+
+footer .copyright {
+  padding: 50px 0;
+  margin: 0;
+  border-top: 1px solid #999;
+}
+
+@media (min-width: 768px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+  
+  h2 {
+    font-size: 2rem;
+  }
+  
+  h3 {
+    font-size: 1.5rem;
+  }
+  
+  /*Header*/
+  header {
+    border-bottom: 0;
+  }
+  
+  header .btn-primary {
+    margin-right: 15px;
+  }
+  
+  header a.navbar-brand>img{
+    height: 80px;
+  }
+  
+  header .navbar-collapse > ul.navbar-nav:first-child {
+    margin-left: 2rem;
+  }
+  
+  /*Hero*/
+  .cards-wrapper .podcast-card  {
+    text-align: center;
+    margin-right: 15px;
+  }
+  
+  .cards-wrapper .podcast-card img{
+    height: 35px;
+  }
+  
+  .hero-image {
+    text-align: center;
+    margin-bottom: 80px;
+  }
+  
+  .hero-image img {
+    height: 400px;
+  }
+  
+  /*Episodes*/
+  .section-episodes {
+    padding: 40px 80px;
+    margin-top: -100px;
+  }
+
+  .post-content {
+    padding-right: 30px;
+  }
+  
+  .post-caption ul:before {
+    content: "";
+    position: absolute;
+    border-left: 1px solid #c3c3c3;
+    left: 0;
+    top: 40px;
+    height: 100px;
+  }
+  
+  .post-link {
+    text-align: left;
+  }
+  
+  /*Blogs*/
+  .blog-card {
+    height: 100%;
+  }
+  
+  .blog-more {
+    text-align: left;
+    margin-top: auto;
+  }
+  
+  .blog-card-head:before {    
+    left: -15px;
+  }
+  
+  /*Prefooter*/
+  form input.form-control {    
+    margin-bottom: 0;
+  }
+  
+  /*Footer*/
+  .footer-logo {
+    height: 80px;
+  }
+}

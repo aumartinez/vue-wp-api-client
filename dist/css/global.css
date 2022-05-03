@@ -1,0 +1,136 @@
+/*Global CSS*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+body {
+  font-family: 'Poppins', Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+}
+
+nav,
+footer .nav-link {
+  padding-right: 0 !important;
+  padding-left: 0 !important;
+}
+
+audio {
+  display: block;
+  margin: auto;
+}
+
+/*Branding*/
+.color-white {
+  color: #fff !important;
+}
+
+.cards-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.img-responsive {
+  max-width: 100%;
+}
+
+.cards-wrapper a {
+  display: inline-block;
+}
+
+.cards-wrapper .podcast-card {
+  align-items: center;
+  padding: 5px;
+  border-radius: 10px;
+  border: solid 1px #ccc;
+}
+
+/*Footer*/
+.social-icons .icon {
+  width: 35px;
+  height: 35px;
+  display: inline-block;
+  border-radius: 50%;
+  text-align: center;
+  padding: 5px;
+}
+
+footer .podcast-card {
+  margin-bottom: 15px;
+  border-radius: 10px;
+  padding: 10px;  
+}
+
+footer .list-group-item+.list-group-item  {
+  border-top-width: thin;
+}
+
+/*Blog posts*/
+.blog-heading p {
+  margin: 0;
+}
+
+/*Gallery*/
+.grid {
+  overflow: hidden;
+  clear: both;
+}
+
+.grid-width-2 {
+  width: 50%;
+  float: left;
+}
+
+.grid-picture {
+  height: 200px;
+  object-fit: cover;
+}
+  
+.grid-col-odd .grid-picture:last-child {
+  height: 400px;
+}
+
+@media (max-width: 767px) {
+  .btn-mobile-long {
+    width: 100%;
+  }
+  
+  .form-control-long {
+    width: 100% !important;
+  }
+}
+
+@media (min-width: 768px) {    
+  .float-right-md {
+    float: right;
+  }
+  
+  .cards-wrapper {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .cards-wrapper .podcast-card {
+    flex: 1;    
+  }
+  
+  form input {
+    flex: 1;
+  }
+  
+  footer .podcast-card {
+    max-width: 50%;
+  }
+  
+  footer .podcast-card:last-child {
+    max-width: 50%;
+  }
+  
+  footer .podcast-card {
+    height: auto;
+  }
+  
+  .grid-col-even,
+  .grid-col-odd {
+    width: 50%;
+    float: left;
+  }
+}
