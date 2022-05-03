@@ -12,6 +12,11 @@ footer .nav-link {
   padding-left: 0 !important;
 }
 
+audio {
+  display: block;
+  margin: auto;
+}
+
 /*Branding*/
 .color-white {
   color: #fff !important;

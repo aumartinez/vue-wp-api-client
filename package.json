@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "axios": "^0.27.2",
+    "strftime": "^0.10.1",
     "vue": "^2.5.17"
   },
   "devDependencies": {
