@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="icon" href="./img/favicon.ico">
+    <title>Nicasource Vue WP Test</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="./css/global.css">
+  </head>
+  <body>
+    <noscript>
+      <strong>We're sorry but Vue App doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+    </noscript>
+    <div id="app"></div>
+    
+    <header>
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <nav class="navbar navbar-expand-lg navbar-light">
+              <a class="navbar-brand" href="#">
+                <img class="img-responsive" src="./img/logo.png" alt="logo" />
+              </a>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                  <li class="nav-item active">
+                    <a class="nav-link" href="#">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                  </li>
+                </ul>
+                
+                <ul class="navbar-nav nav-btns">
+                  <li class="nav-item">
+                    <a class="btn btn-primary" href="#">
+                      Subscribe
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="btn btn-light" href="#">
+                      Sign-in
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </nav>
+          </div>
+        </div><!-- /row -->
+      </div>
+    </header>
+    
+    <section>
+      <h2 class="d-none">Hero</h2>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <article>
+              <div class="hero-label">
+                <p>
+                  Trending episode
+                </p>
+              </div>
+              
+              <h1 class="hero-title">
+                Lorem ipsum dolor sit amet, consectetur
+              </h1>
+              
+              <div class="hero-content">
+                <p>
+                  Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo
+                </p>
+              </div>
+            </article>
+            <article>
+              <div class="subhero-label">
+                <p>
+                  Listen on also
+                </p>
+              </div>
+              <ul class="cards-wrapper list-inline">
+                <li class="podcast-card list-inline-item">
+                  <a href="#">
+                    <img class="img-responsive" alt="Spotify icon" src="./img/listen-spotify.png" />
+                  </a>
+                </li>
+                <li class="podcast-card list-inline-item">
+                  <a href="#">
+                    <img class="img-responsive" alt="Google icon" src="./img/listen-google.png" />
+                  </a>
+                </li>
+                <li class="podcast-card list-inline-item">
+                  <a href="#">
+                    <img class="img-responsive" alt="Apple icon" src="./img/listen-apple.png" />
+                  </a>
+                </li>
+              </ul>              
+            </article>
+          </div>
+          <div class="col-md-6">
+            <img src="./img/podcast-new.png" class="img-responsive" />
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <section>
+      <h2 class="d-none">Episodes</h2>
+      <div class="container section-episodes">
+        <div class="row">
+          <div class="col-10">
+            <h2>
+              Latest Podcast Episodes
+            </h2>
+          </div>
+          
+          <div class="col-md-2">
+            <p class="float-right">
+              <a href="#" title="View all" class="btn btn-primary">View all</a>
+            </p>
+          </div>
+        </div>
+            
+        <!-- posts -->
+        <div class="row">
+          <div class="col-md-3">
+            <img src="./img/article-01.jpg" class="img-responsive" alt="article picture" />
+          </div>
+          <div class="col-md-6">
+            <h3 class="post-title">
+              Lorem ipsum dolor sit amet, consectetur
+            </h3>
+            
+            <p class="post-content">
+              Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
+            </p>
+            
+            <p class="post-link">
+              <a class="btn btn-light" href="#">Know more</a>
+            </p>
+          </div>
+          <div class="col-md-3 post-caption">
+            <ul class="list-inline">
+              <li class="list-inline-item">
+                <span># Season 1</span>
+              </li>
+              <li class="list-inline-item">
+                <span># Posted on Sep 3, 2020</span>
+              </li>
+              <li class="list-inline-item">
+                <span># audio / goodbye / life</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- /posts -->
+        
+        <!-- posts -->
+        <div class="row">
+          <div class="col-md-3">
+            <img src="./img/article-02.jpg" class="img-responsive" alt="article picture" />
+          </div>
+          <div class="col-md-6">
+            <h3 class="post-title">
+              Sed ut perspiciatis unde omnis iste natus
+            </h3>
+            
+            <p class="post-content">
+              Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
+            </p>
+            
+            <p class="post-link">
+              <a class="btn btn-light" href="#">Know more</a>
+            </p>
+          </div>
+          <div class="col-md-3 post-caption">
+            <ul class="list-inline">
+              <li class="list-inline-item">
+                <span># Season 1</span>
+              </li>
+              <li class="list-inline-item">
+                <span># Posted on Sep 3, 2020</span>
+              </li>
+              <li class="list-inline-item">
+                <span># audio / goodbye / life</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- /posts -->
+        
+        <!-- posts -->
+        <div class="row">
+          <div class="col-md-3">
+            <img src="./img/article-03.jpg" class="img-responsive" alt="article picture" />
+          </div>
+          <div class="col-md-6">
+            <h3 class="post-title">
+              At vero eos et accusamus et iusto odio dignissimos
+            </h3>
+            
+            <p class="post-content">
+              Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
+            </p>
+            
+            <p class="post-link">
+              <a class="btn btn-light" href="#">Know more</a>
+            </p>
+          </div>
+          <div class="col-md-3 post-caption">
+            <ul class="list-inline">
+              <li class="list-inline-item">
+                <span># Season 1</span>
+              </li>
+              <li class="list-inline-item">
+                <span># Posted on Sep 3, 2020</span>
+              </li>
+              <li class="list-inline-item">
+                <span># audio / goodbye / life</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- /posts -->
+        
+        <!-- Show more -->
+        <div class="row">
+          <div class="col-12">
+            <p class="text-center">
+              <a href="#" title="Show more" class="btn btn-light">Show More Episodes</a>
+            </p>
+          </div>
+        </div>
+        <!-- /Show more -->
+      </div>
+    </section>
+    
+    <section>
+      <h2 class="d-none">Blog</h2>
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <h2 class="text-center">
+              Blog Posts
+            </h2>
+            <div id="blog-carousel" class="carousel slide" data-interval="false">
+              <!-- Slideshow -->
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <div class="row">
+                    <div class="col-md-4">
+                      <article class="blog-card">
+                        <div class="blog-heading">
+                          <p>
+                            <span class="blog-author">By Mehedi Hasan</span>
+                            <span class="blog-date">Sep 11, 2020</span>
+                          </p>
+                          <p class="blog-name">
+                            NicaSource Radio
+                          </p>
+                        </div>
+                        <div class="blog-title">
+                          <h3>
+                            Lorem ipsum dolor sit amet, consectetur 
+                          </h3>
+                        </div>
+                        <div class="blog-content">
+                          <p>
+                            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                          </p>
+                        </div>
+                        <div class="blog-more">
+                          <a href="#" class="btn btn-light">
+                            Read More
+                          </a>
+                        </div>
+                      </article>
+                    </div>
+                    
+                    <div class="col-md-4">
+                      <article class="blog-card">
+                        <div class="blog-heading">
+                          <p>
+                            <span class="blog-author">By Mehedi Hasan</span>
+                            <span class="blog-date">Sep 11, 2020</span>
+                          </p>
+                          <p class="blog-name">
+                            NicaSource Radio
+                          </p>
+                        </div>
+                        <div class="blog-title">
+                          <h3>
+                            At vero eos et accusamus et iusto
+                          </h3>
+                        </div>
+                        <div class="blog-content">
+                          <p>
+                            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                          </p>
+                        </div>
+                        <div class="blog-more">
+                          <a href="#" class="btn btn-light">
+                            Read More
+                          </a>
+                        </div>
+                      </article>
+                    </div>
+                    
+                    <div class="col-md-4">
+                      <article class="blog-card">
+                        <div class="blog-heading">
+                          <p>
+                            <span class="blog-author">By Mehedi Hasan</span>
+                            <span class="blog-date">Sep 11, 2020</span>
+                          </p>
+                          <p class="blog-name">
+                            NicaSource Radio
+                          </p>
+                        </div>
+                        <div class="blog-title">
+                          <h3>
+                            Itaque earum rerum hic tenetur a sapiente 
+                          </h3>
+                        </div>
+                        <div class="blog-content">
+                          <p>
+                            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                          </p>
+                        </div>
+                        <div class="blog-more">
+                          <a href="#" class="btn btn-light">
+                            Read More
+                          </a>
+                        </div>
+                      </article>
+                    </div>
+                  </div><!-- /row -->
+                </div>
+                <div class="carousel-item">
+                  <div class="row">
+                    <div class="col-md-4">
+                      <article class="blog-card">
+                        <div class="blog-heading">
+                          <p>
+                            <span class="blog-author">By Mehedi Hasan</span>
+                            <span class="blog-date">Sep 11, 2020</span>
+                          </p>
+                          <p class="blog-name">
+                            NicaSource Radio
+                          </p>
+                        </div>
+                        <div class="blog-title">
+                          <h3>
+                            Lorem ipsum dolor sit amet, consectetur 
+                          </h3>
+                        </div>
+                        <div class="blog-content">
+                          <p>
+                            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                          </p>
+                        </div>
+                        <div class="blog-more">
+                          <a href="#" class="btn btn-light">
+                            Read More
+                          </a>
+                        </div>
+                      </article>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- /Slideshow -->
+              
+              <!-- controls -->
+              <div class="text-center">
+                <a href="#blog-carousel" data-slide="prev">
+                  <span><i class="fa-solid fa-arrow-left-long"></i></span>
+                </a>
+                &nbsp;&nbsp;&nbsp;
+                <a href="#blog-carousel" data-slide="next">
+                  <span><i class="fa-solid fa-arrow-right-long"></i></span>
+                </a>
+              </div>
+              <!-- /controls -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <section>
+      <h2 class="d-none">Gallery</h2>
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <h2 class="text-center">Gallery</h2>
+            
+            <div class="grid">
+              <div class="grid-width-2">
+                <div class="grid-col-even">
+                  <div class="grid-picture">
+                    <img alt="Gallery picture" src="./img/gallery-01.png" />
+                  </div>
+                  <div class="grid-picture">
+                    <img alt="Gallery picture" src="./img/gallery-02.png" />
+                  </div>
+                  <div class="grid-picture">
+                    <img alt="Gallery picture" src="./img/gallery-03.png" />
+                  </div>
+                </div>
+                <div class="grid-col-odd">
+                  <div class="grid-picture">
+                    <img alt="Gallery picture" src="./img/gallery-04.png" />
+                  </div>
+                  <div class="grid-picture">
+                    <img alt="Gallery picture" src="./img/gallery-05.png" />
+                  </div>
+                </div>
+              </div>
+              <div class="grid-width-2">
+                <div class="grid-col-even">
+                  <div class="grid-picture">
+                    <img alt="Gallery picture" src="./img/gallery-06.png" />
+                  </div>
+                  <div class="grid-picture">
+                    <img alt="Gallery picture" src="./img/gallery-07.png" />
+                  </div>
+                  <div class="grid-picture">
+                    <img alt="Gallery picture" src="./img/gallery-08.png" />
+                  </div>
+                </div>
+                <div class="grid-col-odd">
+                  <div class="grid-picture">
+                    <img alt="Gallery picture" src="./img/gallery-09.png" />
+                  </div>
+                  <div class="grid-picture">
+                    <img alt="Gallery picture" src="./img/gallery-10.png" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <section class="pre-footer">
+      <h2 class="d-none">Pre footer</h2>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 offset-md-3">
+            <h2 class="text-center">
+              New Episode Every Week!
+            </h2>
+            
+            <p class="text-center">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+            </p>
+            
+            <form class="form-inline" action="/" method="post">
+              <input class="form-control" type="email" required="true" name="email" />
+              <button type="submit" class="btn btn-primary">
+                Subscribe <span class="color-white"><i class="fa-solid fa-arrow-right-long"></i></span>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <img alt="footer logo" class="img-responsive" src="./img/logo.png" />
+            
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+            </p>
+            
+            <ul class="list-inline social-icons">
+              <li class="list-inline-item">
+                <a href="#" title="Facebook" class="icon bg-secondary color-white">
+                  <i class="fa-brands fa-facebook-f"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#" title="LinkedIn" class="icon bg-secondary color-white">
+                  <i class="fa-brands fa-linkedin-in"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#" title="Instagram" class="icon bg-secondary color-white">
+                  <i class="fa-brands fa-instagram"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#" title="Skype" class="icon bg-secondary color-white">
+                  <i class="fa-brands fa-skype"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-4">
+            <div class="row">
+              <div class="col-md-6">
+                <h4>
+                  Pages
+                </h4>
+                
+                <nav>
+                  <ul class="nav flex-column">
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">
+                        Home
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">
+                        Link
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">
+                        Link
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">
+                        Link
+                      </a>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+              
+              <div class="col-md-6">
+                <h4>
+                  Recent Episodes
+                </h4>
+                
+                <nav>
+                  <ul class="nav flex-column">
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">
+                        Episode 1
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">
+                        Episode 2
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">
+                        Episode 3
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">
+                        Episode 4
+                      </a>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+            </div><!--/row-->
+          </div>
+          <div class="col-md-4">
+            <h4>
+              Listen my podcasts also in
+            </h4>
+            
+            <ul class="footer-cards-wrapper flex-column list-group">
+              <li class="podcast-card list-group-item">
+                <a href="#">
+                  <img class="img-responsive" alt="Google icon" src="./img/listen-google.png" />
+                </a>
+              </li>              
+              <li class="podcast-card list-group-item">
+                <a href="#">
+                  <img class="img-responsive" alt="Apple icon" src="./img/listen-apple.png" />
+                </a>
+              </li>
+              <li class="podcast-card list-group-item">
+                <a href="#">
+                  <img class="img-responsive" alt="Spotify icon" src="./img/listen-spotify.png" />
+                </a>
+              </li>              
+            </ul>
+          </div>
+          <div class="col-12">
+            <div class="footer-line">
+            </div>
+            <p class="copyright text-center">
+              &copy; 2022 NicaSource All Rights Reserved
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+    <!-- built files will be auto injected -->
+  </body>
+</html>
