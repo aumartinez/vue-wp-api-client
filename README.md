@@ -28,4 +28,6 @@
  
  https://aumartinez.github.io/vue-wp-api-client/
  
+ Just in case you are unable to see the content, please notice I am hosting WP in a free hosting service with a limit of queries to the DB, if limit is exceeded it just stops the DB
+ 
  ![Alt text](https://github.com/aumartinez/vue-wp-api-client/blob/main/full-page-result.png "Optional title")
