@@ -61,7 +61,7 @@
                 <ul class="nav flex-column">
                   <li class="nav-item"
                   v-for="item in recent"
-                  :key="item"
+                  :key="item.ID"
                   >
                     <a class="nav-link" 
                     :href="item.link">

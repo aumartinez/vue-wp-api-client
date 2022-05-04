@@ -24,4 +24,8 @@
  
  Preview
  
+ When both WP and NodeJS are running
+ 
+ https://aumartinez.github.io/vue-wp-api-client/
+ 
  ![Alt text](https://github.com/aumartinez/vue-wp-api-client/blob/main/full-page-result.png "Optional title")
