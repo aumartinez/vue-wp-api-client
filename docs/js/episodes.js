@@ -3,7 +3,7 @@ import axios from 'axios';
 
 export const episodes = {
    async getEpisodes() {
-      let url = 'http://localhost:8090/php-headless-wp/wordpress/wp-json/wp/v2/podcasts';
+      let url = 'https://php-training-accedo.000webhostapp.com/wp-json/wp/v2/podcasts';
       
       let resp =  await axios
                         .get(url)
@@ -13,7 +13,7 @@ export const episodes = {
       return resp;
     },
    async getCategories() {
-     let url = 'http://localhost:8090/php-headless-wp/wordpress/wp-json/wp/v2/categories';
+     let url = 'https://php-training-accedo.000webhostapp.com/wp-json/wp/v2/categories';
       
       let resp =  await axios
                         .get(url)
@@ -23,7 +23,7 @@ export const episodes = {
       return resp;
    },
    async getTags() {
-     let url = 'http://localhost:8090/php-headless-wp/wordpress/wp-json/wp/v2/tags';
+     let url = 'https://php-training-accedo.000webhostapp.com/wp-json/wp/v2/tags';
       
       let resp =  await axios
                         .get(url)

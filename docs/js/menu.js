@@ -1,12 +1,15 @@
 //menu.js
-import axios from "axios";
+import axios from 'axios';
 
 export const links = {
    async getLinks() {
-      axios
-      .get('http://localhost:8090/php-headless-wp/wordpress/wp-json/myroutes/menu')
-      .then(response => (this.menu = response))
-      .catch(error => console.log(error))
+      let url = 'https://php-training-accedo.000webhostapp.com/wp-json/myroutes/menu';
+      
+      let resp =  await axios
+                        .get(url)
+                        .then(res => res.data)
+                        .catch(error => error);
+      
+      return resp;
     }
-  }
 };
