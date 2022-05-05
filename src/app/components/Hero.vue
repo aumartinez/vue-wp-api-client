@@ -59,7 +59,7 @@
 </template>
 
 <script>
-import {hero} from '../hero.js';
+import {api} from '../api.js';
 
 export default {
   name: 'Hero',
@@ -76,7 +76,9 @@ export default {
   },
   methods: {
     getFeaturedPost: function () {
-      let res = hero.getHeroPost();
+      let url = 'https://php-training-accedo.000webhostapp.com/wp-json/wp/v2/podcasts?orderby=id&order=asc&per_page=1';
+      
+      let res = api.getData(url);
       let getHero = () => {
         res.then(result => {
           this.hasPost = true;

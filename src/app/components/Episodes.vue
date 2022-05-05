@@ -15,43 +15,46 @@
           </p>
         </div>
       </div>
-          
-      <!-- posts -->
-      <div class="row episodes-row"
+      
+      <div class="row-cont"
       v-if="hasPosts"
-      v-for="item in posts"
-      :key="item.id"
       >
-        <div class="col-md-3">
-          <img :src="item.src" class="img-responsive" alt="article picture" />
-        </div>
-        <div class="col-md-6">
-          <h3 class="post-title">
-          {{item.title.rendered}}
-          </h3>
-          
-          <div class="post-content" v-html="item.excerpt.rendered">
+         <!-- posts -->
+          <div class="row episodes-row"          
+          v-for="item in posts"
+          :key="item.id"
+          >
+            <div class="col-md-3">
+              <img :src="item.src" class="img-responsive" alt="article picture" />
+            </div>
+            <div class="col-md-6">
+              <h3 class="post-title">
+              {{item.title.rendered}}
+              </h3>
+              
+              <div class="post-content" v-html="item.excerpt.rendered">
+              </div>
+              
+              <p class="post-link">
+                <a class="btn btn-light" :href="item.link">Know more</a>
+              </p>
+            </div>
+            <div class="col-md-3 post-caption">
+              <ul class="list-inline">
+                <li class="list-inline-item">
+                  <span># {{item.category_name}}</span>
+                </li>
+                <li class="list-inline-item">
+                  <span># {{item.date}}</span>
+                </li>
+                <li class="list-inline-item">
+                  <span># {{item.tags_names}}</span>
+                </li>
+              </ul>
+            </div>
           </div>
-          
-          <p class="post-link">
-            <a class="btn btn-light" :href="item.link">Know more</a>
-          </p>
-        </div>
-        <div class="col-md-3 post-caption">
-          <ul class="list-inline">
-            <li class="list-inline-item">
-              <span># {{item.category_name}}</span>
-            </li>
-            <li class="list-inline-item">
-              <span># {{item.date}}</span>
-            </li>
-            <li class="list-inline-item">
-              <span># {{item.tags_names}}</span>
-            </li>
-          </ul>
-        </div>
+          <!-- /posts -->
       </div>
-      <!-- /posts -->
       
       <!-- Show more -->
       <div class="row">
@@ -71,7 +74,7 @@
 </template>
 
 <script>
-import {episodes} from '../episodes.js';
+import {api} from '../api.js';
 
 const strftime = require('strftime');
 
@@ -92,14 +95,21 @@ export default {
   },
   methods: {
     getEpisodes: function(prev, limit) {
-      let res = episodes.getEpisodes();    
+      let url = 'https://php-training-accedo.000webhostapp.com/wp-json/wp/v2/podcasts';
+      
+      let res = api.getData(url);    
       let getPodcasts = () => {
-        res.then(result => {
+        res
+        .then(api.sleeper(500))
+        .then(result => {
           
           let posts = result;
           posts.length = limit;
           
-          this.hasPosts = true;
+          if (result.length > 0) {
+            this.hasPosts = true;
+          }
+          
           let temp = [];
           
           for (let i = prev; i < posts.length; i++) {
@@ -157,10 +167,14 @@ export default {
       getPodcasts();
     },
     getCategories: function () {
-      let res = episodes.getCategories();
+      let url = 'https://php-training-accedo.000webhostapp.com/wp-json/wp/v2/categories';
+      
+      let res = api.getData(url);
       let cat = {};
       let categories = () => {
-        res.then (result => {
+        res
+        .then(api.sleeper(500))
+        .then (result => {
           let arr = result;
           let temp = [];
           
@@ -178,10 +192,14 @@ export default {
       categories();
     },
     getTags: function () {
-      let res = episodes.getTags();
+      let url = 'https://php-training-accedo.000webhostapp.com/wp-json/wp/v2/tags';
+      
+      let res = api.getData(url);
       let tag = {};
       let tags = () => {
-        res.then (result => {
+        res
+        .then(api.sleeper(500))
+        .then (result => {
           let arr = result;
           let temp = [];
                     
@@ -197,7 +215,7 @@ export default {
       }
       
       tags();
-    }
+    }    
   }
 }
 </script>

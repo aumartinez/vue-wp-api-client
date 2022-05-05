@@ -15,7 +15,7 @@ export const episodes = {
    async getCategories() {
      let url = 'https://php-training-accedo.000webhostapp.com/wp-json/wp/v2/categories';
       
-      let resp =  await axios
+     let resp =  await axios
                         .get(url)
                         .then(res => res.data)
                         .catch(error => error);
@@ -25,7 +25,7 @@ export const episodes = {
    async getTags() {
      let url = 'https://php-training-accedo.000webhostapp.com/wp-json/wp/v2/tags';
       
-      let resp =  await axios
+     let resp =  await axios
                         .get(url)
                         .then(res => res.data)
                         .catch(error => error);

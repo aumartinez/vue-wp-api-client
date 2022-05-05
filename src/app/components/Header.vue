@@ -45,7 +45,7 @@
 </template>
 
 <script>
-import {links} from '../menu.js';
+import {api} from '../api.js';
 
 export default {
   name: 'Header',
@@ -59,7 +59,9 @@ export default {
   },
   methods: {
     getHeaderLinks: function () {
-      let res = links.getLinks();
+      let url = 'https://php-training-accedo.000webhostapp.com/wp-json/myroutes/menu';
+    
+      let res = api.getData(url);
       let getMenu = () => {
         res.then(result => {
           this.menu = result;

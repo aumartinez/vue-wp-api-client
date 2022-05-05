@@ -24,7 +24,7 @@
                         <p>
                           <span class="blog-author">By {{item._embedded.author[0].name}}</span>
                           &nbsp;&nbsp;
-                          <span class="blog-date">Sep 11, 2020</span>
+                          <span class="blog-date">{{item.date}}</span>
                         </p>
                         <p class="blog-name">
                           NicaSource Radio
@@ -104,7 +104,7 @@
 </template>
 
 <script>
-import {blogs} from '../blog.js';
+import {api} from '../api.js';
 
 const strftime = require('strftime');
 
@@ -124,7 +124,8 @@ export default {
   },
   methods: {
     getBlogs: function() {
-      let res = blogs.getBlogs();    
+      let url = 'https://php-training-accedo.000webhostapp.com/wp-json/wp/v2/posts?category=blog&_embed';
+      let res = api.getData(url);    
       let getPosts = () => {
         res.then(result => {          
           this.posts = result;

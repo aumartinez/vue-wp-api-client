@@ -40,7 +40,7 @@
 </template>
 
 <script>
-import {gallery} from '../gallery.js';
+import {api} from '../api.js';
 
 export default {
   name: 'Gallery',
@@ -58,7 +58,9 @@ export default {
   },
   methods: {
     getGalleryImages: function(){
-      let res = gallery.getContent();    
+      let url = 'https://php-training-accedo.000webhostapp.com/wp-json/wp/v2/pages/?slug=gallery';
+      
+      let res = api.getData(url);    
       let getImages = () => {
         res.then(result => {        
           let str = result[0].content.rendered;

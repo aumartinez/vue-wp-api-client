@@ -109,7 +109,7 @@
 </template>
 
 <script>
-import {links} from '../footer.js';
+import {api} from '../api.js';
 
 export default {
   name: 'Footer',
@@ -125,7 +125,9 @@ export default {
   },
   methods: {
     getFooterLinks: function () {
-      let res = links.getLinks();
+      let url = 'https://php-training-accedo.000webhostapp.com/wp-json/myroutes/menu';
+      
+      let res = api.getData(url);
       let getMenu = () => {
         res.then(result => {
           this.menu = result;
@@ -135,7 +137,9 @@ export default {
       getMenu();
     },
     getLatestEpisodes: function() {
-      let res = links.getLatest();    
+      let url = 'https://php-training-accedo.000webhostapp.com/wp-json/wp/v2/posts?orderby=date';
+      
+      let res = api.getData(url);    
       let getEpisodes = () => {
         res.then(result => {
           this.recent = result.splice(3, result.length);
