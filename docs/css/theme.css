@@ -298,6 +298,7 @@ footer .footer-cards-wrapper img {
   
   .cards-wrapper .podcast-card img{
     height: 35px;
+    width: 100%;
   }
   
   .hero-image {
