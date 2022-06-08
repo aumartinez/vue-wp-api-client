@@ -1,7 +1,8 @@
-import Vue from 'vue';
-import App from './app/App.vue';
-import 'strftime';
+import {createApp} from 'vue';
+import App from './App.vue';
+import {router} from './router/index.js';
 
-new Vue({
-  render: h => h(App)
-}).$mount('#app');
+const app = createApp(App);
+
+app.use(router);
+app.mount('#app');

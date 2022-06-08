@@ -83,7 +83,7 @@ export default {
   data () {
     return {
       hasPosts: false,
-      posts: {},
+      posts: [],
       categories: [],
       tags: []
     }
@@ -96,13 +96,12 @@ export default {
   methods: {
     getEpisodes: function(prev, limit) {
       let url = 'https://php-training-accedo.000webhostapp.com/wp-json/wp/v2/podcasts';
+      let res = api.getData(url);
       
-      let res = api.getData(url);    
       let getPodcasts = () => {
         res
         .then(api.sleeper(500))
-        .then(result => {
-          
+        .then(result => {          
           let posts = result;
           posts.length = limit;
           
@@ -127,10 +126,10 @@ export default {
             posts[i].category = temp.pop();
             
             let catId = posts[i].category;
-            let found = this.categories.find(x => x.id === catId).name;            
+            let name = this.categories.find(x => x.id === catId).name;
             
-            if (found) {
-              posts[i].category_name = found;
+            if (name) {
+              posts[i].category_name = name;
             }
             else {
               posts[i].category_name = 'undefined';
@@ -140,10 +139,10 @@ export default {
             temp = posts[i].tags;
             let arr = [];
             for (let t = 0; t < temp.length; t++) {
-              found = this.tags.find(x => x.id === temp[t]).name;
+              let name = this.tags.find(x => x.id === temp[t]).name;
               
-              if (found) {
-                arr.push(found);
+              if (name) {
+                arr.push(name);
               }
               else {
                 arr.push('undefined');
